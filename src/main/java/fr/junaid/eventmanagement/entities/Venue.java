@@ -2,14 +2,15 @@ package fr.junaid.eventmanagement.entities;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Venue extends AbstractEntity {
 
 	private String name;
-	private String streetAdress;
-	private String streetAdress2;
+	private String streetAddress;
+	private String streetAddress2;
 	private String city;
 	private String state;
 	private String country;
@@ -22,20 +23,20 @@ public class Venue extends AbstractEntity {
 		this.name = name;
 	}
 	
-	public String getStreetAdress() {
-		return streetAdress;
+	public String getStreetAddress() {
+		return streetAddress;
 	}
 	
-	public void setStreetAdress(String streetAdress) {
-		this.streetAdress = streetAdress;
+	public void setStreetAddress(String streetAddress) {
+		this.streetAddress = streetAddress;
 	}
 	
-	public String getStreetAdress2() {
-		return streetAdress2;
+	public String getStreetAddress2() {
+		return streetAddress2;
 	}
 	
-	public void setStreetAdress2(String streetAdress2) {
-		this.streetAdress2 = streetAdress2;
+	public void setStreetAddress2(String streetAddress2) {
+		this.streetAddress2 = streetAddress2;
 	}
 	
 	public String getCity() {
@@ -68,6 +69,11 @@ public class Venue extends AbstractEntity {
 	
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+	
+	// To expose id
+	public Long getResouceId() {
+		return this.id;
 	}
 	
 	@Override

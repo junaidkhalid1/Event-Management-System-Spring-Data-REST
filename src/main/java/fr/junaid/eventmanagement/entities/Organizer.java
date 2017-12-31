@@ -30,6 +30,11 @@ public class Organizer extends AbstractEntity {
 		this.events = events;
 	}
 	
+	// To expose id
+	public Long getResouceId() {
+		return this.id;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		return Objects.equals(id, ((Organizer) obj).id );

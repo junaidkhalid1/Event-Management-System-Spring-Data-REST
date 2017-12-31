@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 @Entity
 public class Event extends AbstractEntity {
 
@@ -30,6 +32,7 @@ public class Event extends AbstractEntity {
 	private Set<Participant> participants;
 	
 	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@RestResource(exported=false)
 	private Venue venue;
 	
 	public String getName() {
@@ -102,6 +105,11 @@ public class Event extends AbstractEntity {
 
 	public void setVenue(Venue venue) {
 		this.venue = venue;
+	}
+	
+	// To expose id
+	public Long getResouceId() {
+		return this.id;
 	}
 	
 	@Override

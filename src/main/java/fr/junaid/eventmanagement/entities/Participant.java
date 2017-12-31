@@ -54,6 +54,11 @@ public class Participant extends AbstractEntity {
 		this.event = event;
 	}
 	
+	// To expose id
+	public Long getResouceId() {
+		return this.id;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		return Objects.equals(id, ((Participant) obj).id );
