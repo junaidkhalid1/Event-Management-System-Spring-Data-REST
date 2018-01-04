@@ -14,10 +14,15 @@ import javax.persistence.OneToMany;
 
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({"resouceId"}) // It tell Jackson converter I want the resourceId to be very first
 @Entity
 public class Event extends AbstractEntity {
 
 	private String name;
+	@JsonProperty("desc") // To customize the name in Json Response
 	private String description;
 	private ZonedDateTime startTime;
 	private ZonedDateTime endTime;
